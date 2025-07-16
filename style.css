@@ -1,0 +1,198 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #75121200;
+  color: #333;
+  background-color: darkgray;
+}
+
+header {
+  background: rgb(0, 0, 0);
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header h1 img {
+  max-width: 400px;
+  height: auto;
+}
+
+/* Nav con botones alineados a la derecha */
+header nav {
+  display: flex;
+  gap: 25px;
+  margin-right: 80px;
+}
+
+header nav button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  background-color: #fffcfc;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+}
+
+header nav button:hover {
+  background-color: #7c7c7c;
+}
+
+/* Botón activo visual (opcional) */
+.active-button {
+  background-color: #4c4c4c;
+  color: white;
+}
+
+/* Responsividad básica manteniendo estructura original */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    flex-direction: column;
+    margin: 10px 0 0;
+    gap: 10px;
+  }
+
+  header nav button {
+    width: 100%;
+    max-width: 250px;
+    text-align: left;
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+form button {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background: #333;
+}
+
+footer {
+  background: #1b1b1b;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+#contact h2 {
+  text-align: center;
+}
+
+/* Sección "about" */
+#about {
+  background-image: url('imagenes/imagen7.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Sección "classes" */
+#classes {
+  background-image: url('imagenes/imagen11.jpg'); /* Solo esta imagen, evita duplicados */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* 🌐 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0 0;
+  }
+
+  header h1 img {
+    max-width: 150px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  form input, form textarea {
+    font-size: 1em;
+  }
+
+  nav button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  #about, #classes {
+    padding: 60px 15px;
+    font-size: 0.95em;
+  }
+}

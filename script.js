@@ -7,23 +7,35 @@ function navigateTo(sectionId) {
   const target = document.getElementById(sectionId);
   if (target) {
     target.classList.add('active');
-    
-    // Desplazamiento suave hacia el inicio de la sección
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-
-  // Marcar botón activo (opcional)
-  const buttons = document.querySelectorAll('nav button');
-  buttons.forEach(btn => btn.classList.remove('active-button'));
-
-  const clickedButton = [...buttons].find(btn =>
-    btn.getAttribute('onclick')?.includes(sectionId)
-  );
-
-  if (clickedButton) {
-    clickedButton.classList.add('active-button');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-image');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = slides.length;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex].classList.add('active');
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+// Auto-slide
+setInterval(nextSlide, 4000);

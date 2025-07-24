@@ -6,12 +6,13 @@ body, h1, h2, p, form {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #363535; /* Gris oscuro */
-  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #363535;
+  color: #ffffff;
 }
+
 
 
 header {
@@ -101,7 +102,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff; /* Color fuerte y llamativo */
+  background-color: rgba(255, 255, 255, 0.8); /* blanco con transparencia */
   color: #000;
   border: none;
   padding: 20px 40px;
@@ -114,9 +115,10 @@ header {
 }
 
 .overlay-button:hover {
-  background-color: #ffc107;
+  background-color: rgba(255, 204, 0, 0.9); /* amarillo con menos transparencia */
   transform: translate(-50%, -50%) scale(1.05);
 }
+
 
 
 /* Formularios */
@@ -264,7 +266,7 @@ footer {
   padding: 12px 18px;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000;
   background-color: #ffffff;
   border: none;
@@ -287,7 +289,7 @@ footer {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000;
   text-align: center;
 }
@@ -353,7 +355,7 @@ footer {
 
 .class-info {
   padding: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000;
   flex: 1;
 }
@@ -383,7 +385,7 @@ footer {
   padding: 25px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #1a1a1a; /* Color general del texto más oscuro */
 }
 
@@ -400,7 +402,7 @@ footer {
 .class-text-item p {
   font-size: 18px;      /* Texto más grande */
   line-height: 1.8;
-  color: #853333;       /* Texto más oscuro */
+  color: #000000;       /* Texto más oscuro */
 }
 /* === AJUSTES GENERALES PARA MÓVIL === */
 @media (max-width: 768px) {
@@ -573,24 +575,35 @@ footer {
 }
 @media (max-width: 768px) {
   .about-gallery {
-    padding: 0 10px;       /* Menos espacio lateral */
-    gap: 16px;
+    padding-left: 10px;  /* mueve toda la galería un poco a la izquierda */
+    padding-right: 5px;
   }
 
   .about-item {
-    align-items: flex-start;   /* Alinea contenido a la izquierda */
-  }
-
-  .about-caption {
-    text-align: left;          /* Texto alineado a la izquierda */
-    padding-left: 10px;        /* Ligeramente más hacia la izquierda */
-    padding-right: 10px;
+    margin-left: 0;
+    margin-right: auto;   /* fuerza el alineado a la izquierda */
   }
 
   .about-item img {
-    border-radius: 10px 10px 0 0;
+    width: 100%;
+    display: block;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .about-caption {
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 10px;
   }
 }
+  .about-item img {
+    border-radius: 10px 10px 0 0;
+  }
+  #about {
+  background-color: #000000;
+}
+
+
 
 
 
